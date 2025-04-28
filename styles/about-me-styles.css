@@ -1,0 +1,54 @@
+nav {
+    background-color: SeaGreen;
+    color: snow;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    /* Make the markers disappear */
+    list-style-type: none;
+}
+nav ul li {
+    /* Puts the elements in a single line */
+    display: inline-flex;
+    margin: 0.3em 1em;
+}
+nav input[type='checkbox'], nav label {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* Because we are in mobile mode, we want to display it as a
+       vertical list */
+    nav ul {
+        display: block;
+    }
+    /* We have two lists: the first one are the always visibile items
+       in the menu bar. The second one is the one that will be hidden */
+    nav ul:last-child {
+        width: 100%;
+        flex-basis: 100%;
+    }
+    nav ul li {
+        margin-bottom: 0;
+        width: 100%;
+        text-align: right;
+        padding: 0.5em;
+    }
+    input[type='checkbox']:not(:checked)+ul {
+        display: none;
+    }
+    nav label {
+        text-align: right;
+        display: block;
+        padding: 0.5em;
+        line-height: 1.6em;
+        align-self: center;
+    }
+}
