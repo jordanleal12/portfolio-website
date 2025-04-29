@@ -19,7 +19,7 @@ body, html {
     justify-content: space-between;
 }
 
-.about-header {
+.industry-header {
     border: 1px solid black;
     flex: 0 1 auto;
     background-color: $secondary;
@@ -70,7 +70,7 @@ body, html {
 }
 
 
-.about-main {
+.industry-main {
     flex: 1 1 auto;
     display: flex;
     flex-flow: column nowrap;
@@ -78,7 +78,7 @@ body, html {
     border: 1px solid black;
     border-top: 0;
     
-    .about-title {
+    .industry-title {
         grid-area: title;
         display: flex;
         flex-flow: column nowrap;
@@ -95,13 +95,14 @@ body, html {
         }
     }
 
-    .about-containers {
+    .industry-containers {
         height: 100%;
         @include center;
         flex-flow: row wrap;
 
         section {
-            flex: 1 1 40%;
+            flex: 1 1 45%;
+            max-width: 60rem;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
@@ -109,7 +110,7 @@ body, html {
 
             .text-container {
                 font-size: large;
-                flex: 0 1 40%;
+                flex: 0 1 50%;
                 text-align: left;
                 list-style-position: inside;
                 padding-left: 2em;
@@ -147,7 +148,7 @@ body, html {
 }
 
 
-.about-footer {
+.industry-footer {
   flex: 0 0 auto;
   border: 1px solid black; 
   border-top: 0;
@@ -250,7 +251,7 @@ body, html {
 
 @media screen and (max-width: 1024px) {
   
-    .about-footer, .about-header, .copyright {
+    .industry-footer, .industry-header, .copyright {
         display: none;
     }
 
@@ -358,16 +359,38 @@ body, html {
 
 @media screen and (max-width: 600px) {
 
-  body {
-    font-size: larger;
-    text-align: center;
+    body {
+        font-size: larger;
+        text-align: center;
+        
+        .industry-main {
+        
+            .industry-containers {
+
+                .text-container {
+                    padding: 0;
+                    flex-basis: 100%;
+
+                    ul {
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
     
-    .about-main {
-      padding: 0;
-      margin: 0 0.5em;
+                        li{
+                            white-space: normal;
+                            box-sizing: border-box;
+                            padding-left: 1em;
+                            flex-shrink: 1;
+                            width: 100%;
+
+                        }
+                    }
+                }
+                
+            }
+        }
 
     }
-
-  }
 
 }

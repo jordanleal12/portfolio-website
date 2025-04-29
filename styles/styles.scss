@@ -20,17 +20,17 @@ body, html {
 
 .home-header {
     border: 1px solid black;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     background-color: $secondary;
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    padding: 0.4em 2em;
+    padding: 0.4em 0em;
     white-space: nowrap; 
   
     .header-title {
       flex: 1;
-      text-align: left;
+      text-align: center;
       margin: 0;
     }
   
@@ -41,7 +41,7 @@ body, html {
     .resume-box {
       flex: 1;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       padding: 0;
   
       .resume-button {
@@ -52,7 +52,7 @@ body, html {
         background-color: $main;
         border: 1px solid black;
         border-radius: 5% / 30%;
-        padding: 0.3em 1em;
+        padding: 0.3em 0.5em;
       }
     }
 }
