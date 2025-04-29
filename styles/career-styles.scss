@@ -19,7 +19,7 @@ body, html {
     justify-content: space-between;
 }
 
-.industry-header {
+.career-header {
     border: 1px solid black;
     flex: 0 1 auto;
     background-color: $secondary;
@@ -70,7 +70,7 @@ body, html {
 }
 
 
-.industry-main {
+.career-main {
     flex: 1 1 auto;
     display: flex;
     flex-flow: column nowrap;
@@ -78,7 +78,7 @@ body, html {
     border: 1px solid black;
     border-top: 0;
     
-    .industry-title {
+    .career-title {
         @include center;
         flex-direction: column;
         text-align: center;
@@ -89,27 +89,37 @@ body, html {
 
         p {
             max-width: 60em;
+            margin: 0;
+            padding: 1em;
+        }
+
+        .border {
+            border-bottom: 1px solid black;
+            width: 60%;
+            
         }
     }
 
-    .industry-containers {
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
+    .career-containers {
+        @include center;
         flex-flow: row wrap;
         align-content: space-around;
-        
-        section {
-            flex: 1 1 40rem;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            align-content: flex-start;
-            flex-flow: row wrap;
+        text-align: center;
 
-            img{
-                flex: 0 1 300px;
-            }
+
+        .border {
+            border-left: 1px solid black;
+            height: 20%;
+            
+        }
+
+        .container {
+            flex: 0 1 40%;
+            max-width: 60rem;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            padding: 1em;
 
             .text-container {
                 font-size: large;
@@ -119,12 +129,37 @@ body, html {
                 padding-left: 2em;
 
                 li{
-                    // white-space: nowrap;
+                    white-space: nowrap;
                     text-align: left;
                     padding-left: 0;
                 }
             }
         }
+
+        #real-estate > h3 > i {
+            color: red;
+        }
+
+        #rainf > h3 > i {
+            color: olive
+        }
+        
+        #bricklaying > h3 > i {
+            color: #aa6644;
+        }
+
+        #mcdonalds > h3 > i {
+            color: burlywood;
+        }
+        
+        #waiter {
+            border-top: 1px solid black;
+
+            i {
+                color: rgb(155, 153, 153);
+            }
+        }
+
     }
 
     .nav-buttons {
@@ -151,7 +186,7 @@ body, html {
 }
 
 
-.industry-footer {
+.career-footer {
   flex: 0 0 auto;
   border: 1px solid black; 
   border-top: 0;
@@ -254,7 +289,7 @@ body, html {
 
 @media screen and (max-width: 1024px) {
   
-    .industry-footer, .industry-header, .copyright {
+    .career-footer, .career-header, .copyright {
         display: none;
     }
 
@@ -366,19 +401,30 @@ body, html {
         font-size: larger;
         text-align: center;
         
-        .industry-main > .industry-containers > section > .text-container {
-            flex: 0 1 100%;
-            padding: 0;
-            @include center;
-            flex-direction: column;
+        .career-main { 
+            padding: 0 0.5em;
 
-            ul {
-                padding: 0;
-            }
+            
 
-            h3 {
-                text-align: center;
+            .career-containers {
+                
+            
+                .container {
+                    flex: 1 1 100%;
+                    padding: 0.5em 0; 
+                }
+
+                #waiter {
+                    border-top: none;
+                }
+
+                .border {
+                    display: none;
+                }   
+                
             }
         }
+
     }
+
 }

@@ -9,7 +9,7 @@ body, html {
   justify-content: space-between;
 }
 
-.industry-header {
+.career-header {
   border: 1px solid black;
   flex: 0 1 auto;
   background-color: #B7B8BA;
@@ -19,21 +19,21 @@ body, html {
   padding: 0.4em 0em;
   white-space: nowrap;
 }
-.industry-header .header-title {
+.career-header .header-title {
   flex: 1;
   text-align: center;
   margin: 0;
 }
-.industry-header .navbar {
+.career-header .navbar {
   flex: 2;
 }
-.industry-header .resume-box {
+.career-header .resume-box {
   flex: 1;
   display: flex;
   justify-content: center;
   padding: 0;
 }
-.industry-header .resume-box .resume-button {
+.career-header .resume-box .resume-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@ body, html {
   display: none;
 }
 
-.industry-main {
+.career-main {
   flex: 1 1 auto;
   display: flex;
   flex-flow: column nowrap;
@@ -61,56 +61,83 @@ body, html {
   border: 1px solid black;
   border-top: 0;
 }
-.industry-main .industry-title {
+.career-main .career-title {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
-.industry-main .industry-title h1 {
+.career-main .career-title h1 {
   font-size: 3em;
 }
-.industry-main .industry-title p {
+.career-main .career-title p {
   max-width: 60em;
+  margin: 0;
+  padding: 1em;
 }
-.industry-main .industry-containers {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: row wrap;
-  align-content: space-around;
+.career-main .career-title .border {
+  border-bottom: 1px solid black;
+  width: 60%;
 }
-.industry-main .industry-containers section {
-  flex: 1 1 40rem;
+.career-main .career-containers {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
+  align-items: center;
   flex-flow: row wrap;
+  align-content: space-around;
+  text-align: center;
 }
-.industry-main .industry-containers section img {
-  flex: 0 1 300px;
+.career-main .career-containers .border {
+  border-left: 1px solid black;
+  height: 20%;
 }
-.industry-main .industry-containers section .text-container {
+.career-main .career-containers .container {
+  flex: 0 1 40%;
+  max-width: 60rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 1em;
+}
+.career-main .career-containers .container .text-container {
   font-size: large;
   flex: 0 1 50%;
   text-align: left;
   list-style-position: inside;
   padding-left: 2em;
 }
-.industry-main .industry-containers section .text-container li {
+.career-main .career-containers .container .text-container li {
+  white-space: nowrap;
   text-align: left;
   padding-left: 0;
 }
-.industry-main .nav-buttons {
+.career-main .career-containers #real-estate > h3 > i {
+  color: red;
+}
+.career-main .career-containers #rainf > h3 > i {
+  color: olive;
+}
+.career-main .career-containers #bricklaying > h3 > i {
+  color: #aa6644;
+}
+.career-main .career-containers #mcdonalds > h3 > i {
+  color: burlywood;
+}
+.career-main .career-containers #waiter {
+  border-top: 1px solid black;
+}
+.career-main .career-containers #waiter i {
+  color: rgb(155, 153, 153);
+}
+.career-main .nav-buttons {
   grid-area: buttons;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 2em;
 }
-.industry-main .nav-buttons .nav-button {
+.career-main .nav-buttons .nav-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +150,7 @@ body, html {
   width: 6em;
 }
 
-.industry-footer {
+.career-footer {
   flex: 0 0 auto;
   border: 1px solid black;
   border-top: 0;
@@ -135,7 +162,7 @@ body, html {
   white-space: nowrap;
   max-height: 2.5em;
 }
-.industry-footer h3 {
+.career-footer h3 {
   margin-left: auto;
 }
 
@@ -207,7 +234,7 @@ body, html {
 }
 
 @media screen and (max-width: 1024px) {
-  .industry-footer, .industry-header, .copyright {
+  .career-footer, .career-header, .copyright {
     display: none;
   }
   .burger-header:has(input[type=checkbox]:checked) {
@@ -290,18 +317,17 @@ body, html {
     font-size: larger;
     text-align: center;
   }
-  body .industry-main > .industry-containers > section > .text-container {
-    flex: 0 1 100%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  body .career-main {
+    padding: 0 0.5em;
   }
-  body .industry-main > .industry-containers > section > .text-container ul {
-    padding: 0;
+  body .career-main .career-containers .container {
+    flex: 1 1 100%;
+    padding: 0.5em 0;
   }
-  body .industry-main > .industry-containers > section > .text-container h3 {
-    text-align: center;
+  body .career-main .career-containers #waiter {
+    border-top: none;
   }
-}/*# sourceMappingURL=industry-styles.css.map */
+  body .career-main .career-containers .border {
+    display: none;
+  }
+}/*# sourceMappingURL=career-styles.css.map */
