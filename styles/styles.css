@@ -25,30 +25,6 @@ body, html {
 }
 .home-header .navbar {
   flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-header .navbar ul {
-  display: flex;
-  flex-flow: row nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.home-header .navbar ul li .current {
-  color: black;
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  font-weight: bold;
-}
-.home-header .navbar ul li a {
-  color: blue;
-  padding: 0.5em;
-}
-.home-header .navbar ul li:not(:first-child) {
-  border-left: 1px solid black;
 }
 .home-header .resume-box {
   flex: 1;
@@ -168,32 +144,6 @@ body, html {
 .home-footer h3 {
   margin-left: auto;
 }
-.home-footer .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-footer .navbar ul {
-  display: flex;
-  flex-flow: row nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.home-footer .navbar ul li .current {
-  color: black;
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  font-weight: bold;
-}
-.home-footer .navbar ul li a {
-  color: blue;
-  padding: 0.5em;
-}
-.home-footer .navbar ul li:not(:first-child) {
-  border-left: 1px solid black;
-}
 
 .socials > a {
   text-decoration: none;
@@ -232,6 +182,34 @@ body, html {
 }
 .copyright p {
   margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li:not(:first-child) {
+  border-left: 1px solid black;
+}
+.navbar ul li a:not(.current) {
+  color: blue;
+  padding: 0.5em;
+}
+.navbar ul li .current {
+  color: black;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em;
 }
 
 @media screen and (max-width: 1024px) {

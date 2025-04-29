@@ -16,9 +16,10 @@ body, html {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-.home-header {
+.about-header {
     border: 1px solid black;
     flex: 0 0 auto;
     background-color: $secondary;
@@ -69,83 +70,63 @@ body, html {
 }
 
 
-.home-main {
-    flex: 1 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-        " . . title title title sidebar sidebar"
-        " . . video video video sidebar sidebar"
-        " . . video video video sidebar sidebar"
-        " . . buttons buttons buttons sidebar sidebar"; 
-    border: 1px solid black; 
-    border-top: 0;
-    place-content: center;
+.about-main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
     
-    .home-title {
+    .about-title {
         grid-area: title;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
         align-items: center;
+        text-align: center;
 
         h1 {
             font-size: 3em;
         }
-    }
 
-    .video-intro {
-        grid-area: video;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 2em 0 0 0;
-        
-        #intro {
-            aspect-ratio: 16 / 10;
-            width: 80%;
-            height: auto;
+        p {
+            max-width: 60em;
         }
     }
 
-    .sidebar {
-      grid-area: sidebar;
-      text-align: center;
-
-      .headshot-container {
+    .about-containers {
+        height: 100%;
         @include center;
-        padding: 2em 0 0 0;
-        
-        .headshot {
-          width: 50%;
-          border-radius: 10%;
-  
+        flex-flow: row wrap;
+
+        section {
+            flex: 1 1 40%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin: 2em;
+
+            .text-container {
+                font-size: large;
+                flex: 0 1 40%;
+                text-align: left;
+                list-style-position: inside;
+                padding-left: 2em;
+
+                li{
+                    white-space: nowrap;
+                    text-align: left;
+                    padding-left: 0;
+                }
+            }
         }
-
-      }  
-
-      .contact-form {
-        @include center;
-        flex-direction: column;
-
-        .input {
-          box-sizing: border-box;
-          font-family: 'Courier New', Courier, monospace;
-          width: 100%;
-          
-        }
-
-      }
-
     }
 
     .nav-buttons {
         grid-area: buttons;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-around;
         align-items: center;
-        padding: 1em 0 0 0;
+        margin: 2em;
         
         .nav-button {
           @include center;
@@ -178,10 +159,10 @@ body, html {
 
 
 
+
   h3 {
     margin-left: auto;
   }
-
 }
 
 .socials > a { 
@@ -230,112 +211,45 @@ body, html {
   
 }
 
+
+
 .navbar {
-  @include center;
+    @include center;
 
-  ul {
-      display: flex; 
-      flex-flow: row nowrap;    
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    ul {
+        display: flex; 
+        flex-flow: row nowrap;    
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-      li {
-          
-          &:not(:first-child) {
-          border-left: 1px solid black;
-          }
+        li {
+            
+            &:not(:first-child) {
+            border-left: 1px solid black;
+            }
 
-          a:not(.current) {
-          color: blue;
-          padding: 0.5em;
-          }
-          
-          .current {
-              color: black;
-              pointer-events: none;
-              cursor: default;
-              text-decoration: none;
-              font-weight: bold;
-              padding: 0.5em;
-          }
-      }
-  }
+            a:not(.current) {
+            color: blue;
+            padding: 0.5em;
+            }
+
+            .current {
+                color: black;
+                pointer-events: none;
+                cursor: default;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 0.5em;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {
   
-  .home-footer, .home-header, .copyright {
-    display: none;
-  }
-
-  body, html {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    width: auto; 
-    height: auto;
-    // overflow: hidden;
-
-    .home-main {
-      padding: 2em;
-      flex: 1 1 auto;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      height: fit-content;
-      border: 0;
-
-      .home-title {
-        order: 1;
-      }
-
-      .sidebar {
-        order: 2;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width: 90vw;
-
-        .headshot-container {
-          @include center;
-          flex: 0 1 auto;
-          padding: 0;
-          width: fit-content;
-          padding: 0;
-
-          .headshot {
-            width: 20vw;
-          }
-        
-        }
-
-        .introduction {
-          flex: 1 1 0;
-          min-width: 0;
-          @include center;
-          flex-direction: column;
-          height: 100%;
-        }
-
-        .contact-form {
-          width: fit-content;
-        }
-
-      }
-
-      .video-intro {
-        order: 3;
-        width: 60%;
-      }
-
-      .nav-buttons {
-        order: 4;
-      }
-      
+    .home-footer, .about-header, .copyright {
+        display: none;
     }
 
     .burger-header:has(input[type='checkbox']:checked) {
@@ -437,8 +351,7 @@ body, html {
         }
         
       }
-    }
-  }  
+    }  
 }
 
 @media screen and (max-width: 600px) {
@@ -447,50 +360,9 @@ body, html {
     font-size: larger;
     text-align: center;
     
-    .home-main {
-      // margin-left: -1em;
+    .about-main {
       padding: 0;
       margin: 0 0.5em;
-
-      .sidebar {
-        order: 3;
-        flex-flow: column nowrap;
-        width: 100%;
-        display: flex;
-
-        .introduction {
-          order: -1;
-        }
-
-        .headshot-container > .headshot {
-           
-          width: 60%;
-          height: auto;  
-        }
-
-        .contact-form {
-          width: 100%;
-          height: auto;
-
-          form {
-            width: 80%;
-            height: auto;
-            
-              input, textarea {
-              font-size: x-large;
-            }
-
-          }
-
-        }
-
-      }
-
-      .video-intro {
-        order: 2;
-        width: 100%;
-        height: auto;
-      }
 
     }
 
