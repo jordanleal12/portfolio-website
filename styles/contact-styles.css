@@ -189,17 +189,19 @@ a:hover {
   margin-left: auto;
 }
 
-.socials > a, .socials-container > a {
-  text-decoration: none;
-  font-size: x-large;
-}
-.socials > a .instagram-icon, .socials-container > a .instagram-icon {
+.instagram-icon {
+  color: #fd1d1d;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline-block;
+}
+
+.socials > a, .socials-container > a {
+  text-decoration: none;
+  font-size: x-large;
 }
 .socials > a .facebook-icon, .socials-container > a .facebook-icon {
   color: #4267B2;
