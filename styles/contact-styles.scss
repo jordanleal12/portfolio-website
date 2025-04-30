@@ -222,12 +222,18 @@ a:hover {
   font-size: x-large;
   
   .instagram-icon {
-    background: linear-gradient(to right,
-    #833ab4, #fd1d1d, #fcb045);
+    // background: linear-gradient(to right,
+    // #833ab4, #fd1d1d, #fcb045);
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // color: black; 
+    // -webkit-text-fill-color: transparent;  
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
     -webkit-background-clip: text;
     background-clip: text;
-    color: black; 
-    -webkit-text-fill-color: transparent;  
+    -webkit-text-fill-color: transparent;
+    color: transparent; // Important to let the background show
+    display: inline-block; // Required for background-clip to work
   }
 
   .facebook-icon {
