@@ -19,6 +19,15 @@ body, html {
     justify-content: space-between;
 }
 
+a {
+  text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .industry-header {
     border: 1px solid black;
     flex: 0 1 auto;
@@ -331,6 +340,7 @@ body, html {
               text-decoration: none;
               
               i {
+                text-align: center;
                 width: 1.2em;
               }
             }

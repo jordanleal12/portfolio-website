@@ -17,7 +17,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.testimonials-header {
+.contact-header {
   border: 1px solid black;
   flex: 0 1 auto;
   background-color: #B7B8BA;
@@ -27,21 +27,21 @@ a:hover {
   padding: 0.4em 0em;
   white-space: nowrap;
 }
-.testimonials-header .header-title {
+.contact-header .header-title {
   flex: 1;
   text-align: center;
   margin: 0;
 }
-.testimonials-header .navbar {
+.contact-header .navbar {
   flex: 2;
 }
-.testimonials-header .resume-box {
+.contact-header .resume-box {
   flex: 1;
   display: flex;
   justify-content: center;
   padding: 0;
 }
-.testimonials-header .resume-box .resume-button {
+.contact-header .resume-box .resume-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ a:hover {
   display: none;
 }
 
-.testimonials-main {
+.contact-main {
   flex: 1 1 auto;
   display: flex;
   flex-flow: column nowrap;
@@ -69,17 +69,18 @@ a:hover {
   border: 1px solid black;
   border-top: 0;
 }
-.testimonials-main .testimonials-title {
+.contact-main .contact-title {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
-.testimonials-main .testimonials-title h1 {
+.contact-main .contact-title h1 {
   font-size: 3em;
 }
-.testimonials-main .testimonials-containers {
+.contact-main .contact-containers {
+  flex: 1 1 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,40 +89,78 @@ a:hover {
   align-content: space-around;
   text-align: center;
   gap: 3em;
-  margin-top: 3em;
 }
-.testimonials-main .testimonials-containers .container {
-  flex: 0 1 40%;
-  max-width: 60rem;
-  background-color: #B7B8BA;
-  border: 1px solid black;
-  border-radius: 5%/10%;
+.contact-main .contact-containers .traditional-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
   flex-flow: row wrap;
 }
-.testimonials-main .testimonials-containers .container img {
-  flex: 0 1 30%;
+.contact-main .contact-containers .traditional-container img {
   max-width: 100%;
   height: auto;
-  max-height: 10rem;
+  max-height: 15rem;
   -o-object-fit: contain;
      object-fit: contain;
+  border-radius: 10%;
 }
-.testimonials-main .testimonials-containers .container .container-text {
-  flex: 1 1 60%;
+.contact-main .contact-containers .traditional-container .contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  text-align: left;
+}
+.contact-main .contact-containers .traditional-container .contact-info section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.contact-main .contact-containers .traditional-container .contact-info section i {
+  font-size: x-large;
+  padding: 0.5em;
+}
+.contact-main .contact-containers .socials-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+.contact-main .contact-containers .socials-container a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.5em;
+  font-size: larger;
+}
+.contact-main .contact-containers .socials-container a i {
+  width: 19px;
   text-align: center;
+  font-size: x-large;
 }
-.testimonials-main .nav-buttons {
+.contact-main .contact-containers .contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: larger;
+}
+.contact-main .contact-containers .contact-form .input {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+}
+.contact-main .nav-buttons {
   grid-area: buttons;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 2em;
 }
-.testimonials-main .nav-buttons .nav-button {
+.contact-main .nav-buttons .nav-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +173,7 @@ a:hover {
   width: 6em;
 }
 
-.testimonials-footer {
+.contact-footer {
   flex: 0 0 auto;
   border: 1px solid black;
   border-top: 0;
@@ -146,31 +185,31 @@ a:hover {
   white-space: nowrap;
   max-height: 2.5em;
 }
-.testimonials-footer h3 {
+.contact-footer h3 {
   margin-left: auto;
 }
 
-.socials > a {
+.socials > a, .socials-container > a {
   text-decoration: none;
   font-size: x-large;
 }
-.socials > a .instagram-icon {
+.socials > a .instagram-icon, .socials-container > a .instagram-icon {
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
   -webkit-background-clip: text;
   background-clip: text;
   color: black;
   -webkit-text-fill-color: transparent;
 }
-.socials > a .facebook-icon {
+.socials > a .facebook-icon, .socials-container > a .facebook-icon {
   color: #4267B2;
 }
-.socials > a .linkedin-icon {
+.socials > a .linkedin-icon, .socials-container > a .linkedin-icon {
   color: #0a66c2;
 }
-.socials > a .threads-icon {
+.socials > a .threads-icon, .socials-container > a .threads-icon {
   color: black;
 }
-.socials > a .github-icon {
+.socials > a .github-icon, .socials-container > a .github-icon {
   color: black;
 }
 
@@ -218,7 +257,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1024px) {
-  .testimonials-footer, .testimonials-header, .copyright {
+  .contact-footer, .contact-header, .copyright {
     display: none;
   }
   .burger-header:has(input[type=checkbox]:checked) {
@@ -296,7 +335,7 @@ a:hover {
   .burger-header section .burger-footer, .burger-header section p {
     margin: 0;
   }
-  .testimonials-main > .testimonials-containers > .container {
+  .contact-main > .contact-containers > .container {
     border-radius: 15%/10%;
   }
 }
@@ -304,15 +343,15 @@ a:hover {
   body {
     text-align: center;
   }
-  body .testimonials-main {
+  body .contact-main {
     padding: 0 0.5em;
   }
-  body .testimonials-main .testimonials-containers > .container {
+  body .contact-main .contact-containers > .container {
     border-radius: 10%/15%;
     flex: 1 1 100%;
     padding: 0.5em 0;
   }
-  body .testimonials-main #waiter {
+  body .contact-main #waiter {
     border-top: none;
   }
 }
@@ -320,7 +359,7 @@ a:hover {
   body {
     font-size: small;
   }
-  body .testimonials-main > .testimonials-containers > .container {
+  body .contact-main > .contact-containers > .container {
     border-radius: 15%/10%;
   }
-}/*# sourceMappingURL=testimonials-styles.css.map */
+}/*# sourceMappingURL=contact-styles.css.map */

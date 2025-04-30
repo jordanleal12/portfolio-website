@@ -18,6 +18,15 @@ body, html {
     flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .home-header {
     border: 1px solid black;
     flex: 0 1 auto;
@@ -411,6 +420,7 @@ body, html {
               text-decoration: none;
               
               i {
+                text-align: center;
                 width: 1.2em;
               }
             }

@@ -20,15 +20,15 @@ body, html {
 }
 
 a {
-  text-decoration: none;
-  
+    text-decoration: none;
+    
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-.about-header {
+.contact-header {
     border: 1px solid black;
     flex: 0 1 auto;
     background-color: $secondary;
@@ -79,7 +79,7 @@ a:hover {
 }
 
 
-.about-main {
+.contact-main {
     flex: 1 1 auto;
     display: flex;
     flex-flow: column nowrap;
@@ -87,49 +87,90 @@ a:hover {
     border: 1px solid black;
     border-top: 0;
     
-    .about-title {
-        grid-area: title;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: center;
+    .contact-title {
+        @include center;
+        flex-direction: column;
         text-align: center;
 
         h1 {
             font-size: 3em;
         }
 
-        p {
-            max-width: 60em;
-        }
     }
 
-    .about-containers {
-        height: 100%;
+    .contact-containers {
+        flex: 1 1 30%;
         @include center;
+        align-items: stretch;
         flex-flow: row wrap;
+        align-content: space-around;
+        text-align: center;
+        gap: 3em;
+        // margin-top: 3em;
 
-        section {
-            flex: 1 1 40%;
-            display: flex;
+        .traditional-container {
+            @include center;
             flex-flow: row wrap;
-            justify-content: space-around;
-            margin: 2em;
+            
+            img {
+                max-width: 100%;
+                height: auto;
+                max-height: 15rem;
+                object-fit: contain;
+                border-radius: 10%;
+            }
 
-            .text-container {
-                font-size: large;
-                flex: 0 1 40%;
+            .contact-info {
+                @include center;
+                align-items: flex-start;
+                flex-flow: column nowrap;
                 text-align: left;
-                list-style-position: inside;
-                padding-left: 2em;
 
-                li{
-                    white-space: nowrap;
-                    text-align: left;
-                    padding-left: 0;
+                section {
+                    @include center;
+                    flex-flow: row nowrap;
+                    
+                    i {
+                        font-size: x-large;
+                        padding: 0.5em;
+                    }
                 }
             }
         }
+
+        .socials-container {
+            @include center;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+
+            a {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 0.5em;
+                font-size: larger;
+                
+                i {
+                    width: 19px;
+                    text-align: center;
+                    font-size: x-large; 
+                }
+            }
+        }
+
+        .contact-form {
+            @include center;
+            flex-direction: column;
+            font-size: larger;
+            .input {
+              box-sizing: border-box;
+              font-family: 'Courier New', Courier, monospace;
+              width: 100%;
+              
+            }
+    
+          }
+
     }
 
     .nav-buttons {
@@ -156,7 +197,7 @@ a:hover {
 }
 
 
-.about-footer {
+.contact-footer {
   flex: 0 0 auto;
   border: 1px solid black; 
   border-top: 0;
@@ -176,7 +217,7 @@ a:hover {
   }
 }
 
-.socials > a { 
+.socials > a, .socials-container > a { 
   text-decoration: none;
   font-size: x-large;
   
@@ -259,7 +300,7 @@ a:hover {
 
 @media screen and (max-width: 1024px) {
   
-    .about-footer, .about-header, .copyright {
+    .contact-footer, .contact-header, .copyright {
         display: none;
     }
 
@@ -363,21 +404,44 @@ a:hover {
         }
         
       }
-    }  
+    } 
+    
+    .contact-main > .contact-containers > .container {
+        border-radius: 15% / 10%;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
 
-  body {
-    font-size: larger;
-    text-align: center;
-    
-    .about-main {
-      padding: 0;
-      margin: 0 0.5em;
+    body {
+        text-align: center;
+        
+        .contact-main { 
+            padding: 0 0.5em;
+
+        .contact-containers > .container {
+                border-radius: 10% / 15%;
+                flex: 1 1 100%;
+                padding: 0.5em 0; 
+            }
+
+            #waiter {
+                border-top: none;
+            }  
+                
+        }
 
     }
 
-  }
+}
 
+@media screen and (max-width: 418px) {
+    body{
+        font-size: small;
+
+        .contact-main > .contact-containers > .container {
+            border-radius: 15% / 10%;
+        }
+    }
 }
