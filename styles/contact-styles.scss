@@ -151,7 +151,7 @@ a:hover {
                 font-size: larger;
                 
                 i {
-                    width: 19px;
+                    width: 23px;
                     text-align: center;
                     font-size: x-large; 
                 }
@@ -217,41 +217,18 @@ a:hover {
   }
 }
 
-.instagram-icon {
-    // Fallback for browsers that don't support background-clip:text
-    color: #fd1d1d;
-
-    // Gradient text for browsers that support -webkit-background-clip
-    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    // Makes text transparent to show gradient in supported browsers
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-
-    // Optional: ensure display block so background clip works properly
-    display: inline-block;
-}
-
 .socials > a, .socials-container > a { 
   text-decoration: none;
   font-size: x-large;
   
-//   .instagram-icon {
-//     // background: linear-gradient(to right,
-//     // #833ab4, #fd1d1d, #fcb045);
-//     // -webkit-background-clip: text;
-//     // background-clip: text;
-//     // color: black; 
-//     // -webkit-text-fill-color: transparent;  
-//     background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-//     -webkit-background-clip: text;
-//     background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//     color: transparent; // Important to let the background show
-//     display: inline-block; // Required for background-clip to work
-//   }
+  .instagram-icon {
+    background: linear-gradient(to right,
+    #833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: black; 
+    -webkit-text-fill-color: transparent;
+  }  
 
   .facebook-icon {
     color: #4267B2;
@@ -428,34 +405,6 @@ a:hover {
         
       }
     } 
-    
-    .contact-main > .contact-containers > .container {
-        border-radius: 15% / 10%;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    body {
-        text-align: center;
-        
-        .contact-main { 
-            padding: 0 0.5em;
-
-        .contact-containers > .container {
-                border-radius: 10% / 15%;
-                flex: 1 1 100%;
-                padding: 0.5em 0; 
-            }
-
-            #waiter {
-                border-top: none;
-            }  
-                
-        }
-
-    }
 
 }
 

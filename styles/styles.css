@@ -249,10 +249,12 @@ a:hover {
   body .home-main .sidebar, html .home-main .sidebar {
     order: 2;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-flow: row wrap;
+    align-content: center;
     width: 90vw;
+    gap: 1em;
   }
   body .home-main .sidebar .headshot-container, html .home-main .sidebar .headshot-container {
     display: flex;
@@ -269,7 +271,7 @@ a:hover {
   }
   body .home-main .sidebar .introduction, html .home-main .sidebar .introduction {
     flex: 1 1 0;
-    min-width: 0;
+    min-width: 25em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,6 +279,7 @@ a:hover {
     height: 100%;
   }
   body .home-main .sidebar .contact-form, html .home-main .sidebar .contact-form {
+    flex: 0 0 auto;
     width: -moz-fit-content;
     width: fit-content;
   }

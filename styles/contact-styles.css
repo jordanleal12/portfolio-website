@@ -137,7 +137,7 @@ a:hover {
   font-size: larger;
 }
 .contact-main .contact-containers .socials-container a i {
-  width: 19px;
+  width: 23px;
   text-align: center;
   font-size: x-large;
 }
@@ -189,19 +189,16 @@ a:hover {
   margin-left: auto;
 }
 
-.instagram-icon {
-  color: #fd1d1d;
-  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  display: inline-block;
-}
-
 .socials > a, .socials-container > a {
   text-decoration: none;
   font-size: x-large;
+}
+.socials > a .instagram-icon, .socials-container > a .instagram-icon {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: black;
+  -webkit-text-fill-color: transparent;
 }
 .socials > a .facebook-icon, .socials-container > a .facebook-icon {
   color: #4267B2;
@@ -337,25 +334,6 @@ a:hover {
   }
   .burger-header section .burger-footer, .burger-header section p {
     margin: 0;
-  }
-  .contact-main > .contact-containers > .container {
-    border-radius: 15%/10%;
-  }
-}
-@media screen and (max-width: 600px) {
-  body {
-    text-align: center;
-  }
-  body .contact-main {
-    padding: 0 0.5em;
-  }
-  body .contact-main .contact-containers > .container {
-    border-radius: 10%/15%;
-    flex: 1 1 100%;
-    padding: 0.5em 0;
-  }
-  body .contact-main #waiter {
-    border-top: none;
   }
 }
 @media screen and (max-width: 418px) {
