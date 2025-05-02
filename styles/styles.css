@@ -41,6 +41,7 @@ a:hover {
   padding: 0;
 }
 .home-header .resume-box .resume-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,24 +293,19 @@ a:hover {
   body .home-main .nav-buttons, html .home-main .nav-buttons {
     order: 4;
   }
-  body .burger-header:has(input[type=checkbox]:checked), html .burger-header:has(input[type=checkbox]:checked) {
-    position: fixed;
-    height: 100%;
-    flex: 1 1 auto;
-    background-color: #B7B8BA;
-    border: 1px solid black;
-  }
-  body .burger-header, html .burger-header {
+  .burger-header {
     position: fixed;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
     display: inline-flex;
     flex-flow: column nowrap;
-    margin-left: 0;
-    margin-right: 0;
   }
-  body .burger-header label, html .burger-header label {
+  .burger-header:has(input[type=checkbox]:checked) {
+    background-color: #B7B8BA;
+    border: 1px solid black;
+  }
+  .burger-header label {
     text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
     font-size: x-large;
     width: 1em;
@@ -317,54 +313,58 @@ a:hover {
     display: block;
     padding: 0.5em;
     line-height: 1.6em;
-    align-self: auto;
   }
-  body .burger-header input[type=checkbox]:not(:checked) + section, html .burger-header input[type=checkbox]:not(:checked) + section {
-    display: none;
+  .burger-header input[type=checkbox]:checked + section {
+    max-height: 100vh;
+    opacity: 1;
+    transform: translateY(0);
   }
-  body .burger-header section, html .burger-header section {
+  .burger-header section {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-200%);
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 0.5s ease, transform 1s ease;
     height: 100%;
-    width: auto;
     padding: 0 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
   }
-  body .burger-header section h2, html .burger-header section h2 {
+  .burger-header section h2 {
     font-size: 1em;
     text-align: center;
     margin: 0;
   }
-  body .burger-header section ul, html .burger-header section ul {
+  .burger-header section ul {
     list-style: none;
     padding: 0;
   }
-  body .burger-header section ul li, html .burger-header section ul li {
+  .burger-header section ul li {
     padding: 0.5em 0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
   }
-  body .burger-header section ul li a, html .burger-header section ul li a {
+  .burger-header section ul li a {
     color: black;
     text-decoration: none;
   }
-  body .burger-header section ul li a i, html .burger-header section ul li a i {
+  .burger-header section ul li a i {
     text-align: center;
     width: 1.2em;
   }
-  body .burger-header section .socials, html .burger-header section .socials {
+  .burger-header section .socials {
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
   }
-  body .burger-header section .socials a, html .burger-header section .socials a {
-    padding: 0 0.5em;
-    padding-left: 0;
+  .burger-header section .socials a {
+    padding-right: 0.5em;
   }
-  body .burger-header section .burger-footer, body .burger-header section p, html .burger-header section .burger-footer, html .burger-header section p {
+  .burger-header section .burger-footer, .burger-header section p {
     margin: 0;
   }
 }

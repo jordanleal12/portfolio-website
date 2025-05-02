@@ -226,13 +226,6 @@ a:hover {
   .industry-footer, .industry-header, .copyright {
     display: none;
   }
-  .burger-header:has(input[type=checkbox]:checked) {
-    position: fixed;
-    height: 100%;
-    flex: 1 1 auto;
-    background-color: #B7B8BA;
-    border: 1px solid black;
-  }
   .burger-header {
     position: fixed;
     flex: 1 1 auto;
@@ -240,8 +233,10 @@ a:hover {
     height: 100%;
     display: inline-flex;
     flex-flow: column nowrap;
-    margin-left: 0;
-    margin-right: 0;
+  }
+  .burger-header:has(input[type=checkbox]:checked) {
+    background-color: #B7B8BA;
+    border: 1px solid black;
   }
   .burger-header label {
     text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
@@ -251,14 +246,19 @@ a:hover {
     display: block;
     padding: 0.5em;
     line-height: 1.6em;
-    align-self: auto;
   }
-  .burger-header input[type=checkbox]:not(:checked) + section {
-    display: none;
+  .burger-header input[type=checkbox]:checked + section {
+    max-height: 100vh;
+    opacity: 1;
+    transform: translateY(0);
   }
   .burger-header section {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-200%);
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 0.5s ease, transform 1s ease;
     height: 100%;
-    width: auto;
     padding: 0 0.5em;
     display: flex;
     flex-direction: column;
@@ -295,8 +295,7 @@ a:hover {
     justify-content: space-around;
   }
   .burger-header section .socials a {
-    padding: 0 0.5em;
-    padding-left: 0;
+    padding-right: 0.5em;
   }
   .burger-header section .burger-footer, .burger-header section p {
     margin: 0;

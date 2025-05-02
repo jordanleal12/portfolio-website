@@ -55,6 +55,7 @@ a:hover {
       padding: 0;
   
       .resume-button {
+        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
         @include center;
         gap: 0.8em;
         text-decoration: none;
@@ -179,6 +180,7 @@ a:hover {
         margin: 2em;
         
         .nav-button {
+          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
           @include center;
           text-decoration: none;
           border: 1px solid black;
@@ -298,111 +300,110 @@ a:hover {
 
 @media screen and (max-width: 1024px) {
   
-    .career-footer, .career-header, .copyright {
-        display: none;
-    }
+  .career-footer, .career-header, .copyright {
+      display: none;
+  }
 
-    .burger-header:has(input[type='checkbox']:checked) {
-      position: fixed;
-      height: 100%;
-      flex: 1 1 auto;
+  .burger-header {
+    position: fixed;
+    flex: 1 1 auto;
+    z-index: 1;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+
+    &:has(input[type='checkbox']:checked) {
       background-color: $secondary;
       border: 1px solid black;
     }
 
-    .burger-header {
-      position: fixed;
-      flex: 1 1 auto;
-      z-index: 1;
+    label {
+      text-shadow: 
+        1px 1px 2px $secondary, 
+        1px -1px 2px $secondary, 
+        -1px 1px 2px $secondary, 
+        -1px -1px 2px $secondary, 
+        1px 0px 2px $secondary, 
+        0px 1px 2px $secondary, 
+        -1px 0px 2px $secondary, 
+        0px -1px 2px $secondary;
+      font-size: x-large;
+      width: 1em;
+      text-align: right;
+      display: block;
+      padding: 0.5em;
+      line-height: 1.6em;
+    }
+    
+    input[type='checkbox']:checked + section {
+      max-height: 100vh;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    section {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-200%);
+      overflow: hidden;
+      transition: max-height 1s ease, opacity 0.5s ease, transform 1s ease;
+      // transition stuff above
       height: 100%;
-      display: inline-flex;
-      flex-flow: column nowrap;
-      margin-left: 0;
-      margin-right: 0;
-
+      padding: 0 0.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
       
-
-      label {
-        text-shadow: 
-          1px 1px 2px $secondary, 
-          1px -1px 2px $secondary, 
-          -1px 1px 2px $secondary, 
-          -1px -1px 2px $secondary, 
-          1px 0px 2px $secondary, 
-          0px 1px 2px $secondary, 
-          -1px 0px 2px $secondary, 
-          0px -1px 2px $secondary;
-        font-size: x-large;
-        width: 1em;
-        text-align: right;
-        display: block;
-        padding: 0.5em;
-        line-height: 1.6em;
-        align-self: auto;
+      h2 {
+        font-size: 1em;
+        text-align: center;
+        margin: 0;
       }
 
-      input[type='checkbox']:not(:checked)+section {
-        display: none;
-      }
-      
-      section {
-        height: 100%;
-        width: auto;
-        padding: 0 0.5em;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: stretch;
+      ul {
+        list-style: none;
+        padding: 0;
         
-        h2 {
-          font-size: 1em;
-          text-align: center;
-          margin: 0;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          
-          li {
-            padding: 0.5em 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            a {
-              color: black;
-              text-decoration: none;
-              
-              i {
-                text-align: center;
-                width: 1.2em;
-              }
-            }
-            
-          }
-
-        }
-
-        .socials {
-          flex-grow: 1;
+        li {
+          padding: 0.5em 0;
           display: flex;
-          align-items: flex-end;
-          justify-content: space-around;
-          
+          justify-content: flex-start;
+          align-items: flex-start;
+
           a {
-            padding: 0 0.5em;
-            padding-left: 0;
+            color: black;
+            text-decoration: none;
+            
+            i {
+              text-align: center;
+              width: 1.2em;
+            }
           }
           
         }
 
-        .burger-footer, p {
-          margin: 0;
+      }
+
+      .socials {
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        
+        a {
+          padding-right: 0.5em;
         }
         
       }
-    }  
+
+      .burger-footer, p {
+        margin: 0;
+      }
+      
+    }
+  } 
+  
 }
 
 @media screen and (max-width: 600px) {
