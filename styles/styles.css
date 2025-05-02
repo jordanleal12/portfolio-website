@@ -1,3 +1,92 @@
+.matrix-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 2;
+  pointer-events: none;
+}
+.matrix-container .matrix-code {
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  position: fixed;
+  top: 100%;
+  color: darkgreen;
+  font-family: "Courier New", monospace;
+  font-size: 1.5rem;
+  animation: matrixScroll 3s linear forwards;
+  text-shadow: 0 0 7px lime;
+}
+.matrix-container .matrix-code:nth-child(1) {
+  left: 5%;
+}
+.matrix-container .matrix-code:nth-child(2) {
+  left: 10%;
+}
+.matrix-container .matrix-code:nth-child(3) {
+  left: 15%;
+}
+.matrix-container .matrix-code:nth-child(4) {
+  left: 20%;
+}
+.matrix-container .matrix-code:nth-child(5) {
+  left: 25%;
+}
+.matrix-container .matrix-code:nth-child(6) {
+  left: 30%;
+}
+.matrix-container .matrix-code:nth-child(7) {
+  left: 35%;
+}
+.matrix-container .matrix-code:nth-child(8) {
+  left: 40%;
+}
+.matrix-container .matrix-code:nth-child(9) {
+  left: 45%;
+}
+.matrix-container .matrix-code:nth-child(10) {
+  left: 50%;
+}
+.matrix-container .matrix-code:nth-child(11) {
+  left: 55%;
+}
+.matrix-container .matrix-code:nth-child(12) {
+  left: 60%;
+}
+.matrix-container .matrix-code:nth-child(13) {
+  left: 65%;
+}
+.matrix-container .matrix-code:nth-child(14) {
+  left: 70%;
+}
+.matrix-container .matrix-code:nth-child(15) {
+  left: 75%;
+}
+.matrix-container .matrix-code:nth-child(16) {
+  left: 80%;
+}
+.matrix-container .matrix-code:nth-child(17) {
+  left: 85%;
+}
+.matrix-container .matrix-code:nth-child(18) {
+  left: 90%;
+}
+.matrix-container .matrix-code:nth-child(19) {
+  left: 95%;
+}
+.matrix-container .matrix-code:nth-child(20) {
+  left: 100%;
+}
+
+@keyframes matrixScroll {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
 body, html {
   font-family: "Courier New", Courier, monospace;
   background-color: #E9EAEC;

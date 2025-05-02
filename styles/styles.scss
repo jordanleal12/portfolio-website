@@ -8,6 +8,44 @@ $tertiary: #9FA0A1;
     align-items: center;
 }
 
+.matrix-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 2;
+  pointer-events: none;
+
+  .matrix-code {
+    white-space: nowrap;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    position: fixed;
+    top: 100%;
+    color: darkgreen;
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    animation: matrixScroll 3s linear forwards;
+    text-shadow: 0 0 7px lime;
+  }
+
+  @for $loop from 1 through 20 {
+    .matrix-code:nth-child(#{$loop}) {
+      left: #{$loop * 5%};
+    }
+  }
+
+}
+
+@keyframes matrixScroll {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
 body, html {
     font-family: 'Courier New', Courier, monospace;
     background-color: $main;
@@ -454,7 +492,7 @@ a:hover {
       
     }
   } 
-  
+
 }
 
 @media screen and (max-width: 600px) {
