@@ -78,6 +78,7 @@ a:hover {
   text-align: center;
 }
 .testimonials-main .testimonials-title h1 {
+  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
   font-size: 3em;
 }
 .testimonials-main .testimonials-containers {

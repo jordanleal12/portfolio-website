@@ -31,7 +31,7 @@ $tertiary: #9FA0A1;
 
   @for $loop from 1 through 20 {
     .matrix-code:nth-child(#{$loop}) {
-      left: #{$loop * 5%};
+      left: #{($loop - 1) * 5%};
     }
   }
 
@@ -140,6 +140,9 @@ a:hover {
         align-items: center;
 
         h1 {
+            text-shadow: 
+            0 0 5px darkgreen,
+            0 0 10px lime;
             font-size: 3em;
         }
     }

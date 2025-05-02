@@ -78,6 +78,7 @@ a:hover {
   text-align: center;
 }
 .contact-main .contact-title h1 {
+  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
   font-size: 3em;
 }
 .contact-main .contact-containers {

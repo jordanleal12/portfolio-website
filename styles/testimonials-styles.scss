@@ -94,7 +94,10 @@ a:hover {
         text-align: center;
 
         h1 {
-            font-size: 3em;
+          text-shadow: 
+            0 0 5px darkgreen,
+            0 0 10px lime;
+          font-size: 3em;
         }
 
     }

@@ -78,12 +78,13 @@ a:hover {
   text-align: center;
 }
 .career-main .career-title h1 {
+  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
   font-size: 3em;
 }
 .career-main .career-title p {
   max-width: 60em;
   margin: 0;
-  padding: 1em;
+  padding: 1em 0;
 }
 .career-main .career-title .border {
   border-bottom: 1px solid black;
