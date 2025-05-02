@@ -103,6 +103,7 @@ a:hover {
   padding: 2em 0 0 0;
 }
 .home-main .sidebar .headshot-container .headshot {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   width: 50%;
   border-radius: 10%;
 }
@@ -125,6 +126,7 @@ a:hover {
   padding: 1em 0 0 0;
 }
 .home-main .nav-buttons .nav-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;

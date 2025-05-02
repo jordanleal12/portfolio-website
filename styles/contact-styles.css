@@ -42,6 +42,7 @@ a:hover {
   padding: 0;
 }
 .contact-header .resume-box .resume-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +162,7 @@ a:hover {
   margin: 2em;
 }
 .contact-main .nav-buttons .nav-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;

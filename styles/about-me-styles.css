@@ -42,6 +42,7 @@ a:hover {
   padding: 0;
 }
 .about-header .resume-box .resume-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,6 +83,7 @@ a:hover {
 }
 .about-main .about-title p {
   max-width: 60em;
+  padding-bottom: 2em;
 }
 .about-main .about-containers {
   height: 100%;
@@ -89,25 +91,39 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  gap: 1em;
+  align-items: flex-start;
 }
 .about-main .about-containers section {
   flex: 1 1 40%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 2em;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.about-main .about-containers section img {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  flex: 0 1 30%;
+  max-width: 100%;
+  height: auto;
+  min-width: 290px;
+  border-radius: 10%;
 }
 .about-main .about-containers section .text-container {
   font-size: large;
-  flex: 0 1 40%;
+  flex: 0 1 60%;
   text-align: left;
   list-style-position: inside;
-  padding-left: 2em;
+  align-self: flex-start;
 }
-.about-main .about-containers section .text-container li {
-  white-space: nowrap;
-  text-align: left;
-  padding-left: 0;
+@media screen and (max-width: 1024px) {
+  .about-main .about-containers section .text-container {
+    flex: 0 1 80%;
+  }
+}
+.about-main .about-containers section .text-container ul {
+  padding: 0;
 }
 .about-main .nav-buttons {
   grid-area: buttons;
@@ -117,6 +133,7 @@ a:hover {
   margin: 2em;
 }
 .about-main .nav-buttons .nav-button {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -55,6 +55,7 @@ a:hover {
       padding: 0;
   
       .resume-button {
+        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
         @include center;
         gap: 0.8em;
         text-decoration: none;
@@ -107,6 +108,7 @@ a:hover {
         justify-content: flex-start;
         flex-flow: row wrap;
         align-content: space-around;
+        gap: 2em;
         
         section {
             flex: 1 1 40rem;
@@ -117,7 +119,12 @@ a:hover {
             flex-flow: row wrap;
 
             img{
-                flex: 0 1 300px;
+              box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+              flex: 0 1 30%; 
+              max-width: 100%;
+              height: auto;
+              min-width: 290px;
+              border-radius: 10%;
             }
 
             .text-container {
@@ -144,6 +151,7 @@ a:hover {
         margin: 2em;
         
         .nav-button {
+          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
           @include center;
           text-decoration: none;
           border: 1px solid black;

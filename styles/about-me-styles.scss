@@ -55,6 +55,7 @@ a:hover {
       padding: 0;
   
       .resume-button {
+        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
         @include center;
         gap: 0.8em;
         text-decoration: none;
@@ -80,78 +81,94 @@ a:hover {
 
 
 .about-main {
-    flex: 1 1 auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    border: 1px solid black;
-    border-top: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-top: 0;
     
-    .about-title {
-        grid-area: title;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
+  .about-title {
+      grid-area: title;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
 
-        h1 {
-            font-size: 3em;
+      h1 {
+          font-size: 3em;
+      }
+
+      p {
+          max-width: 60em;
+          padding-bottom: 2em;
+      }
+  }
+
+  .about-containers {
+    height: 100%;
+    @include center;
+    flex-flow: row wrap;
+    gap: 1em;
+    align-items: flex-start;
+
+    section {
+      flex: 1 1 40%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+
+        img {
+          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+          flex: 0 1 30%; 
+          max-width: 100%;
+          height: auto;
+          min-width: 290px;
+          border-radius: 10%;
         }
 
-        p {
-            max-width: 60em;
-        }
-    }
+        .text-container {
+          font-size: large;
+          flex: 0 1 60%;
+          text-align: left;
+          list-style-position: inside;
+          align-self: flex-start;
+          
+          @media screen and (max-width: 1024px) {
+            flex: 0 1 80%;
+          }
 
-    .about-containers {
-        height: 100%;
-        @include center;
-        flex-flow: row wrap;
-
-        section {
-            flex: 1 1 40%;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
-            margin: 2em;
-
-            .text-container {
-                font-size: large;
-                flex: 0 1 40%;
-                text-align: left;
-                list-style-position: inside;
-                padding-left: 2em;
-
-                li{
-                    white-space: nowrap;
-                    text-align: left;
-                    padding-left: 0;
-                }
+            ul {
+              padding: 0;
             }
         }
     }
+  }
 
-    .nav-buttons {
-        grid-area: buttons;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 2em;
+  .nav-buttons {
+      grid-area: buttons;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2em;
+      
+      .nav-button {
+        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+        @include center;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 10% / 20%;
+        color: black;
+        background-color: $secondary;
+        height: 2.5em;
+        width: 6em;
         
-        .nav-button {
-          @include center;
-          text-decoration: none;
-          border: 1px solid black;
-          border-radius: 10% / 20%;
-          color: black;
-          background-color: $secondary;
-          height: 2.5em;
-          width: 6em;
-          
-        }
+      }
 
-    }
+  }
 
 }
 
@@ -364,6 +381,9 @@ a:hover {
         
       }
     }  
+
+
+
 }
 
 @media screen and (max-width: 600px) {
