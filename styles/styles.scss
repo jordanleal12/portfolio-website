@@ -590,10 +590,6 @@ body, html {
 
   .matrix-container {
   
-    .matrix-code {
-
-    }
-  
     @for $loop from 1 through 20 {
       .matrix-code:nth-child(#{$loop}) {
         left: #{($loop - 3) * 5%};
