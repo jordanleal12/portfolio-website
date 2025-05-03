@@ -11,8 +11,8 @@ body, html {
 
 a {
   text-decoration: none;
+  color: blue;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -42,7 +42,7 @@ a:hover {
   padding: 0;
 }
 .testimonials-header .resume-box .resume-button {
-  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +53,12 @@ a:hover {
   border: 1px solid black;
   border-radius: 5%/30%;
   padding: 0.3em 0.5em;
+}
+.testimonials-header .resume-box .resume-button:hover {
+  background-color: #9FA0A1;
+  color: white;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
 }
 
 .burger-header {
@@ -93,6 +99,7 @@ a:hover {
   margin-top: 3em;
 }
 .testimonials-main .testimonials-containers .container {
+  text-shadow: 0 0 5px white;
   box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   flex: 0 1 40%;
   max-width: 60rem;
@@ -125,7 +132,7 @@ a:hover {
   margin: 2em;
 }
 .testimonials-main .nav-buttons .nav-button {
-  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,6 +143,12 @@ a:hover {
   background-color: #B7B8BA;
   height: 2.5em;
   width: 6em;
+}
+.testimonials-main .nav-buttons .nav-button:hover {
+  background-color: #9FA0A1;
+  color: white;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
 }
 
 .testimonials-footer {
@@ -157,6 +170,12 @@ a:hover {
 .socials > a {
   text-decoration: none;
   font-size: x-large;
+}
+.socials > a i {
+  transition: 0.3s;
+}
+.socials > a i:hover {
+  transform: scale(1.2);
 }
 .socials > a .instagram-icon {
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
@@ -275,6 +294,13 @@ a:hover {
   .burger-header section ul {
     list-style: none;
     padding: 0;
+    text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+  .burger-header section ul li {
+    transition: 0.3s;
+  }
+  .burger-header section ul li:hover {
+    transform: scale(1.05);
   }
   .burger-header section ul li {
     padding: 0.5em 0;

@@ -455,11 +455,8 @@ body, html {
 }
 
 @media screen and (max-width: 418px) {
-    body{
-        font-size: small;
-
-        .contact-main > .contact-containers > .container {
-            border-radius: 15% / 10%;
-        }
-    }
+  body > .contact-main > .contact-containers > .container {
+    border-radius: 15% / 10%;
+      
+  }
 }

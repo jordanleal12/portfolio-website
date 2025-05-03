@@ -3,28 +3,54 @@ $secondary: #B7B8BA;
 $tertiary: #9FA0A1;
 
 @mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @mixin green-shadow {
-  text-shadow: 
-    0 0 5px rgba(0, 100, 0, 0.5),
-    0 0 10px rgba(0, 255, 0, 0.5);
+text-shadow: 
+  0 0 5px rgba(0, 100, 0, 0.5),
+  0 0 10px rgba(0, 255, 0, 0.5);
 }
 @mixin box-shadow {
-  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
 }
 @mixin label {
-  text-shadow: 
-      1px 1px 2px $secondary, 
-      1px -1px 2px $secondary, 
-      -1px 1px 2px $secondary, 
-      -1px -1px 2px $secondary, 
-      1px 0px 2px $secondary, 
-      0px 1px 2px $secondary, 
-      -1px 0px 2px $secondary, 
-      0px -1px 2px $secondary;
+text-shadow: 
+    1px 1px 2px $secondary, 
+    1px -1px 2px $secondary, 
+    -1px 1px 2px $secondary, 
+    -1px -1px 2px $secondary, 
+    1px 0px 2px $secondary, 
+    0px 1px 2px $secondary, 
+    -1px 0px 2px $secondary, 
+    0px -1px 2px $secondary;
+}
+@mixin button {
+transition: 0.3s;
+&:hover {
+  background-color: $tertiary;
+  color: white;
+  @include box-shadow;
+  transform: scale(1.2);
+}
+}
+@mixin icon($selector, $scale: 1.2) {
+#{$selector} {
+  transition: 0.3s;
+  &:hover {
+  transform: scale($scale)
+  }
+}
+}
+@mixin links {
+a {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 }
 
 body, html {
@@ -38,14 +64,7 @@ body, html {
     justify-content: space-between;
 }
 
-a {
-  text-decoration: none;
-  
-}
-
-a:hover {
-  text-decoration: underline;
-}
+@include links;
 
 .industry-header {
     border: 1px solid black;
@@ -74,7 +93,7 @@ a:hover {
       padding: 0;
   
       .resume-button {
-        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+        @include button;
         @include center;
         gap: 0.8em;
         text-decoration: none;
@@ -87,8 +106,6 @@ a:hover {
     }
 }
 
-
-
 .burger-header {
   display: none;
 
@@ -97,7 +114,6 @@ a:hover {
   }
 
 }
-
 
 .industry-main {
     flex: 1 1 auto;
@@ -171,7 +187,7 @@ a:hover {
         margin: 2em;
         
         .nav-button {
-          @include box-shadow;
+          @include button;
           @include center;
           text-decoration: none;
           border: 1px solid black;
@@ -186,7 +202,6 @@ a:hover {
     }
 
 }
-
 
 .industry-footer {
   flex: 0 0 auto;
@@ -209,6 +224,7 @@ a:hover {
 }
 
 .socials > a { 
+  @include icon(i);
   text-decoration: none;
   font-size: x-large;
   
@@ -305,7 +321,6 @@ a:hover {
     flex-flow: column nowrap;
 
     &:has(input[type='checkbox']:checked) {
-      pointer-events: auto;
       background-color: $secondary;
       border: 1px solid black;
     }
@@ -322,6 +337,7 @@ a:hover {
     }
     
     input[type='checkbox']:checked + section {
+      pointer-events: auto;
       max-height: 100vh;
       opacity: 1;
       transform: translateY(0);
@@ -350,6 +366,8 @@ a:hover {
       ul {
         list-style: none;
         padding: 0;
+        @include icon(li, 1.05);
+        @include green-shadow;
         
         li {
           padding: 0.5em 0;

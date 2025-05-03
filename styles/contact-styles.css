@@ -389,10 +389,7 @@ a:hover {
   }
 }
 @media screen and (max-width: 418px) {
-  body {
-    font-size: small;
-  }
-  body .contact-main > .contact-containers > .container {
+  body > .contact-main > .contact-containers > .container {
     border-radius: 15%/10%;
   }
 }/*# sourceMappingURL=contact-styles.css.map */
