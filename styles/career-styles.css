@@ -78,7 +78,7 @@ a:hover {
   text-align: center;
 }
 .career-main .career-title h1 {
-  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
+  text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
   font-size: 3em;
 }
 .career-main .career-title p {
@@ -250,6 +250,7 @@ a:hover {
   }
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -261,6 +262,7 @@ a:hover {
     border: 1px solid black;
   }
   .burger-header label {
+    pointer-events: auto;
     text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
     font-size: x-large;
     width: 1em;
@@ -270,6 +272,7 @@ a:hover {
     line-height: 1.6em;
   }
   .burger-header input[type=checkbox]:checked + section {
+    pointer-events: auto;
     max-height: 100vh;
     opacity: 1;
     transform: translateY(0);

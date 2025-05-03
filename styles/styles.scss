@@ -7,6 +7,25 @@ $tertiary: #9FA0A1;
     justify-content: center;
     align-items: center;
 }
+@mixin green-shadow {
+  text-shadow: 
+    0 0 5px rgba(0, 100, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.5);
+}
+@mixin box-shadow {
+  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+}
+@mixin label {
+  text-shadow: 
+      1px 1px 2px $secondary, 
+      1px -1px 2px $secondary, 
+      -1px 1px 2px $secondary, 
+      -1px -1px 2px $secondary, 
+      1px 0px 2px $secondary, 
+      0px 1px 2px $secondary, 
+      -1px 0px 2px $secondary, 
+      0px -1px 2px $secondary;
+}
 
 .matrix-container {
   position: fixed;
@@ -76,7 +95,6 @@ a:hover {
     white-space: nowrap; 
   
     .header-title {
-      // text-shadow: 3px 3px 2px white, 2px 2px 2px rgba(206,89,55,0);
       flex: 1;
       text-align: center;
       margin: 0;
@@ -105,8 +123,6 @@ a:hover {
       }
     }
 }
-
-
 
 .burger-header {
   display: none;
@@ -140,9 +156,7 @@ a:hover {
         align-items: center;
 
         h1 {
-            text-shadow: 
-            0 0 5px darkgreen,
-            0 0 10px lime;
+            @include green-shadow;
             font-size: 3em;
         }
     }
@@ -170,7 +184,7 @@ a:hover {
         padding: 2em 0 0 0;
 
         .headshot {
-          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+          @include box-shadow;
           width: 50%;
           border-radius: 10%;
   
@@ -202,7 +216,7 @@ a:hover {
         padding: 1em 0 0 0;
         
         .nav-button {
-          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+          @include box-shadow;
           @include center;
           text-decoration: none;
           border: 1px solid black;
@@ -398,6 +412,7 @@ a:hover {
 
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -410,15 +425,8 @@ a:hover {
     }
 
     label {
-      text-shadow: 
-        1px 1px 2px $secondary, 
-        1px -1px 2px $secondary, 
-        -1px 1px 2px $secondary, 
-        -1px -1px 2px $secondary, 
-        1px 0px 2px $secondary, 
-        0px 1px 2px $secondary, 
-        -1px 0px 2px $secondary, 
-        0px -1px 2px $secondary;
+      pointer-events: auto;
+      @include label;
       font-size: x-large;
       width: 1em;
       text-align: right;
@@ -428,6 +436,7 @@ a:hover {
     }
     
     input[type='checkbox']:checked + section {
+      pointer-events: auto;
       max-height: 100vh;
       opacity: 1;
       transform: translateY(0);
@@ -507,7 +516,7 @@ a:hover {
     .home-main {
       // margin-left: -1em;
       padding: 0;
-      margin: 0 0.5em;
+      margin: 0;
 
       .sidebar {
         order: 3;
@@ -517,6 +526,7 @@ a:hover {
 
         .introduction {
           order: -1;
+          min-width: auto;
         }
 
         .headshot-container > .headshot {

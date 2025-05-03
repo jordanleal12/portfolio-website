@@ -78,7 +78,7 @@ a:hover {
   text-align: center;
 }
 .industry-main .industry-title h1 {
-  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
+  text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
   font-size: 3em;
 }
 .industry-main .industry-title p {
@@ -229,6 +229,7 @@ a:hover {
   }
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -236,10 +237,12 @@ a:hover {
     flex-flow: column nowrap;
   }
   .burger-header:has(input[type=checkbox]:checked) {
+    pointer-events: auto;
     background-color: #B7B8BA;
     border: 1px solid black;
   }
   .burger-header label {
+    pointer-events: auto;
     text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
     font-size: x-large;
     width: 1em;

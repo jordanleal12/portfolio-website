@@ -7,6 +7,25 @@ $tertiary: #9FA0A1;
     justify-content: center;
     align-items: center;
 }
+@mixin green-shadow {
+  text-shadow: 
+    0 0 5px rgba(0, 100, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.5);
+}
+@mixin box-shadow {
+  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+}
+@mixin label {
+  text-shadow: 
+      1px 1px 2px $secondary, 
+      1px -1px 2px $secondary, 
+      -1px 1px 2px $secondary, 
+      -1px -1px 2px $secondary, 
+      1px 0px 2px $secondary, 
+      0px 1px 2px $secondary, 
+      -1px 0px 2px $secondary, 
+      0px -1px 2px $secondary;
+}
 
 body, html {
     font-family: 'Courier New', Courier, monospace;
@@ -94,9 +113,7 @@ a:hover {
         text-align: center;
 
         h1 {
-          text-shadow: 
-            0 0 5px darkgreen,
-            0 0 10px lime;
+          @include green-shadow;
           font-size: 3em;
         }
 
@@ -122,7 +139,7 @@ a:hover {
             flex-flow: row wrap;
 
             img{
-              box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+              @include box-shadow;
               flex: 0 1 30%; 
               max-width: 100%;
               height: auto;
@@ -154,7 +171,7 @@ a:hover {
         margin: 2em;
         
         .nav-button {
-          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+          @include box-shadow;
           @include center;
           text-decoration: none;
           border: 1px solid black;
@@ -280,6 +297,7 @@ a:hover {
 
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -287,20 +305,14 @@ a:hover {
     flex-flow: column nowrap;
 
     &:has(input[type='checkbox']:checked) {
+      pointer-events: auto;
       background-color: $secondary;
       border: 1px solid black;
     }
 
     label {
-      text-shadow: 
-        1px 1px 2px $secondary, 
-        1px -1px 2px $secondary, 
-        -1px 1px 2px $secondary, 
-        -1px -1px 2px $secondary, 
-        1px 0px 2px $secondary, 
-        0px 1px 2px $secondary, 
-        -1px 0px 2px $secondary, 
-        0px -1px 2px $secondary;
+      pointer-events: auto;
+      @include label;
       font-size: x-large;
       width: 1em;
       text-align: right;

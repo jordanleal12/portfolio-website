@@ -11,8 +11,8 @@ body, html {
 
 a {
   text-decoration: none;
+  color: blue;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -42,7 +42,6 @@ a:hover {
   padding: 0;
 }
 .contact-header .resume-box .resume-button {
-  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +52,13 @@ a:hover {
   border: 1px solid black;
   border-radius: 5%/30%;
   padding: 0.3em 0.5em;
+  transition: 0.3s;
+}
+.contact-header .resume-box .resume-button:hover {
+  background-color: #9FA0A1;
+  color: white;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
 }
 
 .burger-header {
@@ -78,7 +84,7 @@ a:hover {
   text-align: center;
 }
 .contact-main .contact-title h1 {
-  text-shadow: 0 0 5px darkgreen, 0 0 10px lime;
+  text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
   font-size: 3em;
 }
 .contact-main .contact-containers {
@@ -98,7 +104,15 @@ a:hover {
   align-items: center;
   flex-flow: row wrap;
 }
+.contact-main .contact-containers .traditional-container a {
+  text-decoration: none;
+  color: blue;
+}
+.contact-main .contact-containers .traditional-container a:hover {
+  text-decoration: underline;
+}
 .contact-main .contact-containers .traditional-container img {
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   max-width: 100%;
   height: auto;
   max-height: 15rem;
@@ -130,6 +144,7 @@ a:hover {
   align-items: center;
   flex-flow: column nowrap;
   align-items: flex-start;
+  padding: 0 0.5em;
 }
 .contact-main .contact-containers .socials-container a {
   display: flex;
@@ -137,6 +152,9 @@ a:hover {
   align-items: center;
   gap: 0.5em;
   font-size: larger;
+}
+.contact-main .contact-containers .socials-container a p:hover {
+  text-decoration: underline;
 }
 .contact-main .contact-containers .socials-container a i {
   width: 23px;
@@ -155,6 +173,16 @@ a:hover {
   font-family: "Courier New", Courier, monospace;
   width: 100%;
 }
+.contact-main .contact-containers .contact-form .submit {
+  transition: 0.3s;
+  border-radius: 10%;
+}
+.contact-main .contact-containers .contact-form .submit:hover {
+  background-color: #9FA0A1;
+  color: white;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
+}
 .contact-main .nav-buttons {
   grid-area: buttons;
   display: flex;
@@ -163,7 +191,7 @@ a:hover {
   margin: 2em;
 }
 .contact-main .nav-buttons .nav-button {
-  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,6 +202,12 @@ a:hover {
   background-color: #B7B8BA;
   height: 2.5em;
   width: 6em;
+}
+.contact-main .nav-buttons .nav-button:hover {
+  background-color: #9FA0A1;
+  color: white;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2);
 }
 
 .contact-footer {
@@ -195,6 +229,12 @@ a:hover {
 .socials > a, .socials-container > a {
   text-decoration: none;
   font-size: x-large;
+}
+.socials > a i, .socials-container > a i {
+  transition: 0.3s;
+}
+.socials > a i:hover, .socials-container > a i:hover {
+  transform: scale(1.2);
 }
 .socials > a .instagram-icon, .socials-container > a .instagram-icon {
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
@@ -265,6 +305,7 @@ a:hover {
   }
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -276,6 +317,7 @@ a:hover {
     border: 1px solid black;
   }
   .burger-header label {
+    pointer-events: auto;
     text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
     font-size: x-large;
     width: 1em;
@@ -285,6 +327,7 @@ a:hover {
     line-height: 1.6em;
   }
   .burger-header input[type=checkbox]:checked + section {
+    pointer-events: auto;
     max-height: 100vh;
     opacity: 1;
     transform: translateY(0);
@@ -310,6 +353,13 @@ a:hover {
   .burger-header section ul {
     list-style: none;
     padding: 0;
+    text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+  .burger-header section ul li {
+    transition: 0.3s;
+  }
+  .burger-header section ul li:hover {
+    transform: scale(1.05);
   }
   .burger-header section ul li {
     padding: 0.5em 0;

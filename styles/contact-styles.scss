@@ -7,6 +7,51 @@ $tertiary: #9FA0A1;
     justify-content: center;
     align-items: center;
 }
+@mixin green-shadow {
+  text-shadow: 
+    0 0 5px rgba(0, 100, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.5);
+}
+@mixin box-shadow {
+  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+}
+@mixin label {
+  text-shadow: 
+      1px 1px 2px $secondary, 
+      1px -1px 2px $secondary, 
+      -1px 1px 2px $secondary, 
+      -1px -1px 2px $secondary, 
+      1px 0px 2px $secondary, 
+      0px 1px 2px $secondary, 
+      -1px 0px 2px $secondary, 
+      0px -1px 2px $secondary;
+}
+@mixin button {
+  transition: 0.3s;
+  &:hover {
+    background-color: $tertiary;
+    color: white;
+    @include box-shadow;
+    transform: scale(1.2);
+  }
+}
+@mixin icon($selector, $scale: 1.2) {
+  #{$selector} {
+    transition: 0.3s;
+    &:hover {
+    transform: scale($scale)
+    }
+  }
+}
+@mixin links {
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
 body, html {
     font-family: 'Courier New', Courier, monospace;
@@ -19,14 +64,7 @@ body, html {
     justify-content: space-between;
 }
 
-a {
-    text-decoration: none;
-    
-}
-
-a:hover {
-    text-decoration: underline;
-}
+@include links;
 
 .contact-header {
     border: 1px solid black;
@@ -36,7 +74,7 @@ a:hover {
     align-items: center;
     justify-content: space-between; 
     padding: 0.4em 0em;
-    white-space: nowrap; 
+    white-space: nowrap;
   
     .header-title {
       flex: 1;
@@ -55,7 +93,7 @@ a:hover {
       padding: 0;
   
       .resume-button {
-        box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+        // box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
         @include center;
         gap: 0.8em;
         text-decoration: none;
@@ -64,6 +102,7 @@ a:hover {
         border: 1px solid black;
         border-radius: 5% / 30%;
         padding: 0.3em 0.5em;
+        @include button;
       }
     }
 }
@@ -81,123 +120,131 @@ a:hover {
 
 
 .contact-main {
-    flex: 1 1 auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    border: 1px solid black;
-    border-top: 0;
-    
-    .contact-title {
-        @include center;
-        flex-direction: column;
-        text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-top: 0;
+  
+  .contact-title {
+    @include center;
+    flex-direction: column;
+    text-align: center;
 
-        h1 {
-          text-shadow: 
-            0 0 5px darkgreen,
-            0 0 10px lime;
-          font-size: 3em;
-        }
-
+    h1 {
+      @include green-shadow;
+      font-size: 3em;
     }
 
-    .contact-containers {
-        flex: 1 1 30%;
+  }
+
+  .contact-containers {
+    flex: 1 1 30%;
+    @include center;
+    align-items: stretch;
+    flex-flow: row wrap;
+    align-content: space-around;
+    text-align: center;
+    gap: 3em;
+
+    .traditional-container {
+      @include center;
+      @include links;
+      flex-flow: row wrap;
+      
+      img {
+        @include box-shadow;
+        max-width: 100%;
+        height: auto;
+        max-height: 15rem;
+        object-fit: contain;
+        border-radius: 10%;
+      }
+
+      .contact-info {
         @include center;
-        align-items: stretch;
-        flex-flow: row wrap;
-        align-content: space-around;
-        text-align: center;
-        gap: 3em;
-        // margin-top: 3em;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        text-align: left;
 
-        .traditional-container {
-            @include center;
-            flex-flow: row wrap;
-            
-            img {
-                max-width: 100%;
-                height: auto;
-                max-height: 15rem;
-                object-fit: contain;
-                border-radius: 10%;
-            }
-
-            .contact-info {
-                @include center;
-                align-items: flex-start;
-                flex-flow: column nowrap;
-                text-align: left;
-
-                section {
-                    @include center;
-                    flex-flow: row nowrap;
-                    
-                    i {
-                        font-size: x-large;
-                        padding: 0.5em;
-                    }
-                }
-            }
-        }
-
-        .socials-container {
-            @include center;
-            flex-flow: column nowrap;
-            align-items: flex-start;
-
-            a {
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                gap: 0.5em;
-                font-size: larger;
-                
-                i {
-                    width: 23px;
-                    text-align: center;
-                    font-size: x-large; 
-                }
-            }
-        }
-
-        .contact-form {
-            @include center;
-            flex-direction: column;
-            font-size: larger;
-            .input {
-              box-sizing: border-box;
-              font-family: 'Courier New', Courier, monospace;
-              width: 100%;
-              
-            }
-    
-          }
-
-    }
-
-    .nav-buttons {
-        grid-area: buttons;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 2em;
-        
-        .nav-button {
-          box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+        section {
           @include center;
-          text-decoration: none;
-          border: 1px solid black;
-          border-radius: 10% / 20%;
-          color: black;
-          background-color: $secondary;
-          height: 2.5em;
-          width: 6em;
+          flex-flow: row nowrap;
           
+          i {
+            font-size: x-large;
+            padding: 0.5em;
+          }
+        }
+      }
+    }
+
+    .socials-container {
+      @include center;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      padding: 0 0.5em;
+      // @include links;
+
+      a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 0.5em;
+        font-size: larger;
+        
+        p:hover {
+          text-decoration: underline;
         }
 
+        i {
+          width: 23px;
+          text-align: center;
+          font-size: x-large;
+        }
+      }
     }
+
+    .contact-form {
+      @include center;
+      flex-direction: column;
+      font-size: larger;
+      
+      .input {
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+        width: 100%; 
+      }
+
+      .submit {
+        @include button;
+        border-radius: 10%;
+      }
+    }
+  }
+
+  .nav-buttons {
+      grid-area: buttons;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2em;
+      
+      .nav-button {
+        @include button;
+        @include center;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 10% / 20%;
+        color: black;
+        background-color: $secondary;
+        height: 2.5em;
+        width: 6em;
+        
+      }
+
+  }
 
 }
 
@@ -225,6 +272,7 @@ a:hover {
 .socials > a, .socials-container > a { 
   text-decoration: none;
   font-size: x-large;
+  @include icon(i);
   
   .instagram-icon {
     background: linear-gradient(to right,
@@ -268,8 +316,6 @@ a:hover {
   
 }
 
-
-
 .navbar {
     @include center;
 
@@ -311,6 +357,7 @@ a:hover {
 
   .burger-header {
     position: fixed;
+    pointer-events: none;
     flex: 1 1 auto;
     z-index: 1;
     height: 100%;
@@ -323,15 +370,8 @@ a:hover {
     }
 
     label {
-      text-shadow: 
-        1px 1px 2px $secondary, 
-        1px -1px 2px $secondary, 
-        -1px 1px 2px $secondary, 
-        -1px -1px 2px $secondary, 
-        1px 0px 2px $secondary, 
-        0px 1px 2px $secondary, 
-        -1px 0px 2px $secondary, 
-        0px -1px 2px $secondary;
+      pointer-events: auto;
+      @include label;
       font-size: x-large;
       width: 1em;
       text-align: right;
@@ -341,6 +381,7 @@ a:hover {
     }
     
     input[type='checkbox']:checked + section {
+      pointer-events: auto;
       max-height: 100vh;
       opacity: 1;
       transform: translateY(0);
@@ -369,6 +410,8 @@ a:hover {
       ul {
         list-style: none;
         padding: 0;
+        @include icon(li, 1.05);
+        @include green-shadow;
         
         li {
           padding: 0.5em 0;
