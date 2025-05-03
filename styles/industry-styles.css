@@ -10,6 +10,108 @@ html {
   justify-content: space-between;
 }
 
+.hello-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 50%;
+  padding-top: 5em;
+  pointer-events: none;
+  margin: 0;
+}
+
+.hello-world {
+  font-size: 4em;
+  font-weight: bold;
+  color: darkgreen;
+  text-shadow: 0 0 5px lime, 0 0 10px greenyellow;
+  animation-name: typing;
+  animation-timing-function: step-start;
+  opacity: 0;
+}
+.hello-world:nth-of-type(7) {
+  visibility: hidden;
+}
+
+.hello-world:nth-of-type(1) {
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+
+.hello-world:nth-of-type(2) {
+  animation-delay: 0.2s;
+  animation-duration: 2.8s;
+}
+
+.hello-world:nth-of-type(3) {
+  animation-delay: 0.4s;
+  animation-duration: 2.6s;
+}
+
+.hello-world:nth-of-type(4) {
+  animation-delay: 0.6s;
+  animation-duration: 2.4s;
+}
+
+.hello-world:nth-of-type(5) {
+  animation-delay: 0.8s;
+  animation-duration: 2.2s;
+}
+
+.hello-world:nth-of-type(6) {
+  animation-delay: 1s;
+  animation-duration: 2s;
+}
+
+.hello-world:nth-of-type(7) {
+  animation-delay: 1.2s;
+  animation-duration: 1.8s;
+}
+
+.hello-world:nth-of-type(8) {
+  animation-delay: 1.4s;
+  animation-duration: 1.6s;
+}
+
+.hello-world:nth-of-type(9) {
+  animation-delay: 1.6s;
+  animation-duration: 1.4s;
+}
+
+.hello-world:nth-of-type(10) {
+  animation-delay: 1.8s;
+  animation-duration: 1.2s;
+}
+
+.hello-world:nth-of-type(11) {
+  animation-delay: 2s;
+  animation-duration: 1s;
+}
+
+.hello-world:nth-of-type(12) {
+  animation-delay: 2.2s;
+  animation-duration: 0.8s;
+}
+
+.hello-world:nth-of-type(13) {
+  animation-delay: 2.4s;
+  animation-duration: 0.6s;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 a {
   text-decoration: none;
   color: blue;
@@ -352,5 +454,11 @@ a:hover {
   }
   body .industry-main > .industry-containers > section > .text-container h3 {
     text-align: center;
+  }
+  .hello-container {
+    height: 30%;
+  }
+  .hello-world {
+    font-size: 2em;
   }
 }/*# sourceMappingURL=industry-styles.css.map */
