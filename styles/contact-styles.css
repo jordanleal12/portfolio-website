@@ -388,6 +388,11 @@ a:hover {
     margin: 0;
   }
 }
+@media screen and (max-width: 600px) {
+  .input, text-area {
+    font-size: x-large;
+  }
+}
 @media screen and (max-width: 418px) {
   body > .contact-main > .contact-containers > .container {
     border-radius: 15%/10%;
