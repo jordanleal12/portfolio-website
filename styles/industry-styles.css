@@ -1,6 +1,7 @@
-body, html {
+body,
+html {
   font-family: "Courier New", Courier, monospace;
-  background-color: #E9EAEC;
+  background-color: #e9eaec;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -20,7 +21,7 @@ a:hover {
 .industry-header {
   border: 1px solid black;
   flex: 0 1 auto;
-  background-color: #B7B8BA;
+  background-color: #b7b8ba;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,13 +50,13 @@ a:hover {
   gap: 0.8em;
   text-decoration: none;
   color: black;
-  background-color: #E9EAEC;
+  background-color: #e9eaec;
   border: 1px solid black;
   border-radius: 5%/30%;
   padding: 0.3em 0.5em;
 }
 .industry-header .resume-box .resume-button:hover {
-  background-color: #9FA0A1;
+  background-color: #9fa0a1;
   color: white;
   box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   transform: scale(1.2);
@@ -141,12 +142,12 @@ a:hover {
   border: 1px solid black;
   border-radius: 10%/20%;
   color: black;
-  background-color: #B7B8BA;
+  background-color: #b7b8ba;
   height: 2.5em;
   width: 6em;
 }
 .industry-main .nav-buttons .nav-button:hover {
-  background-color: #9FA0A1;
+  background-color: #9fa0a1;
   color: white;
   box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
   transform: scale(1.2);
@@ -156,7 +157,7 @@ a:hover {
   flex: 0 0 auto;
   border: 1px solid black;
   border-top: 0;
-  background-color: #B7B8BA;
+  background-color: #b7b8ba;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,7 +187,7 @@ a:hover {
   -webkit-text-fill-color: transparent;
 }
 .socials > a .facebook-icon {
-  color: #4267B2;
+  color: #4267b2;
 }
 .socials > a .linkedin-icon {
   color: #0a66c2;
@@ -207,7 +208,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   max-height: 1.5em;
-  background-color: #9FA0A1;
+  background-color: #9fa0a1;
 }
 .copyright p {
   margin: 0;
@@ -242,7 +243,9 @@ a:hover {
 }
 
 @media screen and (max-width: 1024px) {
-  .industry-footer, .industry-header, .copyright {
+  .industry-footer,
+  .industry-header,
+  .copyright {
     display: none;
   }
   .burger-header {
@@ -255,12 +258,12 @@ a:hover {
     flex-flow: column nowrap;
   }
   .burger-header:has(input[type=checkbox]:checked) {
-    background-color: #B7B8BA;
+    background-color: #b7b8ba;
     border: 1px solid black;
   }
   .burger-header label {
     pointer-events: auto;
-    text-shadow: 1px 1px 2px #B7B8BA, 1px -1px 2px #B7B8BA, -1px 1px 2px #B7B8BA, -1px -1px 2px #B7B8BA, 1px 0px 2px #B7B8BA, 0px 1px 2px #B7B8BA, -1px 0px 2px #B7B8BA, 0px -1px 2px #B7B8BA;
+    text-shadow: 1px 1px 2px #b7b8ba, 1px -1px 2px #b7b8ba, -1px 1px 2px #b7b8ba, -1px -1px 2px #b7b8ba, 1px 0px 2px #b7b8ba, 0px 1px 2px #b7b8ba, -1px 0px 2px #b7b8ba, 0px -1px 2px #b7b8ba;
     font-size: x-large;
     width: 1em;
     text-align: right;
@@ -326,7 +329,8 @@ a:hover {
   .burger-header section .socials a {
     padding-right: 0.5em;
   }
-  .burger-header section .burger-footer, .burger-header section p {
+  .burger-header section .burger-footer,
+  .burger-header section p {
     margin: 0;
   }
 }

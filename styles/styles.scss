@@ -1,6 +1,6 @@
-$main: #E9EAEC;
-$secondary: #B7B8BA;
-$tertiary: #9FA0A1;
+$main: #e9eaec;
+$secondary: #b7b8ba;
+$tertiary: #9fa0a1;
 
 @mixin center {
   display: flex;
@@ -8,49 +8,41 @@ $tertiary: #9FA0A1;
   align-items: center;
 }
 @mixin green-shadow {
-text-shadow: 
-  0 0 5px rgba(0, 100, 0, 0.5),
-  0 0 10px rgba(0, 255, 0, 0.5);
+  text-shadow: 0 0 5px rgba(0, 100, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
 }
 @mixin box-shadow {
-box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.5);
 }
 @mixin label {
-text-shadow: 
-    1px 1px 2px $secondary, 
-    1px -1px 2px $secondary, 
-    -1px 1px 2px $secondary, 
-    -1px -1px 2px $secondary, 
-    1px 0px 2px $secondary, 
-    0px 1px 2px $secondary, 
-    -1px 0px 2px $secondary, 
-    0px -1px 2px $secondary;
+  text-shadow: 1px 1px 2px $secondary, 1px -1px 2px $secondary,
+    -1px 1px 2px $secondary, -1px -1px 2px $secondary, 1px 0px 2px $secondary,
+    0px 1px 2px $secondary, -1px 0px 2px $secondary, 0px -1px 2px $secondary;
 }
 @mixin button {
-transition: 0.3s;
-&:hover {
-  background-color: $tertiary;
-  color: white;
-  @include box-shadow;
-  transform: scale(1.2);
-}
-}
-@mixin icon($selector, $scale: 1.2) {
-#{$selector} {
   transition: 0.3s;
   &:hover {
-  transform: scale($scale)
+    background-color: $tertiary;
+    color: white;
+    @include box-shadow;
+    transform: scale(1.2);
   }
 }
+@mixin icon($selector, $scale: 1.2) {
+  #{$selector} {
+    transition: 0.3s;
+    &:hover {
+      transform: scale($scale);
+    }
+  }
 }
 @mixin links {
-a {
-  text-decoration: none;
-  color: blue;
-  &:hover {
-    text-decoration: underline;
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-}
 }
 
 .matrix-container {
@@ -68,7 +60,7 @@ a {
     position: absolute;
     top: 100%;
     color: darkgreen;
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
     font-size: 1.5rem;
     animation: matrixScroll 3s linear forwards;
     text-shadow: 0 0 7px lime;
@@ -79,7 +71,6 @@ a {
       left: #{($loop - 1) * 5%};
     }
   }
-
 }
 
 @keyframes matrixScroll {
@@ -91,206 +82,193 @@ a {
   }
 }
 
-body, html {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: $main;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+body,
+html {
+  font-family: "Courier New", Courier, monospace;
+  background-color: $main;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 @include links;
 
 .home-header {
-    border: 1px solid black;
-    flex: 0 1 auto;
-    background-color: $secondary;
+  border: 1px solid black;
+  flex: 0 1 auto;
+  background-color: $secondary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em 0em;
+  white-space: nowrap;
+
+  .header-title {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .navbar {
+    flex: 2;
+  }
+
+  .resume-box {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 0.4em 0em;
-    white-space: nowrap; 
-  
-    .header-title {
-      flex: 1;
-      text-align: center;
-      margin: 0;
+    justify-content: center;
+    padding: 0;
+
+    .resume-button {
+      @include button;
+      @include center;
+      gap: 0.8em;
+      text-decoration: none;
+      color: black;
+      background-color: $main;
+      border: 1px solid black;
+      border-radius: 5% / 30%;
+      padding: 0.3em 0.5em;
     }
-  
-    .navbar {
-      flex: 2;
-    }
-  
-    .resume-box {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-  
-      .resume-button {
-        @include button;
-        @include center;
-        gap: 0.8em;
-        text-decoration: none;
-        color: black;
-        background-color: $main;
-        border: 1px solid black;
-        border-radius: 5% / 30%;
-        padding: 0.3em 0.5em;
-      }
-    }
+  }
 }
 
 .burger-header {
   display: none;
 
-  [type='checkbox'] {
-  display: none;
+  [type="checkbox"] {
+    display: none;
   }
-
 }
 
 .home-main {
-    flex: 1 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-        " . . title title title sidebar sidebar"
-        " . . video video video sidebar sidebar"
-        " . . video video video sidebar sidebar"
-        " . . buttons buttons buttons sidebar sidebar"; 
-    border: 1px solid black; 
-    border-top: 0;
-    place-content: center;
-    
-    .home-title {
-        grid-area: title;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: center;
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    " . . title title title sidebar sidebar"
+    " . . video video video sidebar sidebar"
+    " . . video video video sidebar sidebar"
+    " . . buttons buttons buttons sidebar sidebar";
+  border: 1px solid black;
+  border-top: 0;
+  place-content: center;
 
-        h1 {
-            @include green-shadow;
-            font-size: 3em;
-        }
+  .home-title {
+    grid-area: title;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      @include green-shadow;
+      font-size: 3em;
+    }
+  }
+
+  .video-intro {
+    grid-area: video;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em 0 0 0;
+
+    #intro {
+      aspect-ratio: 16 / 10;
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    text-align: center;
+
+    .headshot-container {
+      @include center;
+      padding: 2em 0 0 0;
+
+      .headshot {
+        @include box-shadow;
+        width: 50%;
+        border-radius: 10%;
+      }
     }
 
-    .video-intro {
-        grid-area: video;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 2em 0 0 0;
-        
-        #intro {
-            aspect-ratio: 16 / 10;
-            width: 80%;
-            height: auto;
-        }
-    }
+    .contact-form {
+      @include center;
+      flex-direction: column;
 
-    .sidebar {
-      grid-area: sidebar;
-      text-align: center;
-
-      .headshot-container {
-        @include center;
-        padding: 2em 0 0 0;
-
-        .headshot {
-          @include box-shadow;
-          width: 50%;
-          border-radius: 10%;
-  
-        }
-
-      }  
-
-      .contact-form {
-        
-        @include center;
-        flex-direction: column;
-
-        .input {
-          box-sizing: border-box;
-          font-family: 'Courier New', Courier, monospace;
-          width: 100%;
-          
-        }
-
-        .submit {
-          @include button;
-          border-radius: 10%;
-        }
-
+      .input {
+        box-sizing: border-box;
+        font-family: "Courier New", Courier, monospace;
+        width: 100%;
       }
 
+      .submit {
+        @include button;
+        border-radius: 10%;
+      }
     }
+  }
 
-    .nav-buttons {
-        grid-area: buttons;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 1em 0 0 0;
-        
-        .nav-button {
-          @include button;
-          @include center;
-          text-decoration: none;
-          border: 1px solid black;
-          border-radius: 10% / 20%;
-          color: black;
-          background-color: $secondary;
-          height: 2.5em;
-          width: 6em;
-          
-        }
+  .nav-buttons {
+    grid-area: buttons;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em 0 0 0;
 
+    .nav-button {
+      @include button;
+      @include center;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 10% / 20%;
+      color: black;
+      background-color: $secondary;
+      height: 2.5em;
+      width: 6em;
     }
-
+  }
 }
 
 .home-footer {
   flex: 0 0 auto;
-  border: 1px solid black; 
+  border: 1px solid black;
   border-top: 0;
   background-color: $secondary;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 0em 2em;
   white-space: nowrap;
   max-height: 2.5em;
 
-
-
   h3 {
     margin-left: auto;
   }
-
 }
 
-.socials > a { 
+.socials > a {
   @include icon(i);
   text-decoration: none;
   font-size: x-large;
-  
+
   .instagram-icon {
-    background: linear-gradient(to right,
-    #833ab4, #fd1d1d, #fcb045);
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
     -webkit-background-clip: text;
     background-clip: text;
-    color: black; 
-    -webkit-text-fill-color: transparent;  
+    color: black;
+    -webkit-text-fill-color: transparent;
   }
 
   .facebook-icon {
-    color: #4267B2;
+    color: #4267b2;
   }
 
   .linkedin-icon {
@@ -309,7 +287,7 @@ body, html {
 .copyright {
   font-weight: bold;
   flex: 0 0 auto;
-  border: 1px solid black; 
+  border: 1px solid black;
   border-top: 0;
   @include center;
   max-height: 1.5em;
@@ -317,55 +295,54 @@ body, html {
 
   p {
     margin: 0;
-    
   }
-  
 }
 
 .navbar {
   @include center;
 
   ul {
-      display: flex; 
-      flex-flow: row nowrap;    
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-      li {
-          
-          &:not(:first-child) {
-          border-left: 1px solid black;
-          }
-
-          a:not(.current) {
-          color: blue;
-          padding: 0.5em;
-          }
-          
-          .current {
-              color: black;
-              pointer-events: none;
-              cursor: default;
-              text-decoration: none;
-              font-weight: bold;
-              padding: 0.5em;
-          }
+    li {
+      &:not(:first-child) {
+        border-left: 1px solid black;
       }
+
+      a:not(.current) {
+        color: blue;
+        padding: 0.5em;
+      }
+
+      .current {
+        color: black;
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.5em;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
-  
-  .home-footer, .home-header, .copyright {
+  .home-footer,
+  .home-header,
+  .copyright {
     display: none;
   }
 
-  body, html {
+  body,
+  html {
     display: flex;
     flex-direction: row;
     padding: 0;
-    width: auto; 
+    width: auto;
     height: auto;
     // overflow: hidden;
 
@@ -402,7 +379,6 @@ body, html {
           .headshot {
             width: 20vw;
           }
-        
         }
 
         .introduction {
@@ -417,7 +393,6 @@ body, html {
           flex: 0 0 auto;
           width: fit-content;
         }
-
       }
 
       .video-intro {
@@ -428,10 +403,8 @@ body, html {
       .nav-buttons {
         order: 4;
       }
-      
     }
-
-  }  
+  }
 
   .burger-header {
     position: fixed;
@@ -442,7 +415,7 @@ body, html {
     display: inline-flex;
     flex-flow: column nowrap;
 
-    &:has(input[type='checkbox']:checked) {
+    &:has(input[type="checkbox"]:checked) {
       background-color: $secondary;
       border: 1px solid black;
     }
@@ -457,14 +430,14 @@ body, html {
       padding: 0.5em;
       line-height: 1.6em;
     }
-    
-    input[type='checkbox']:checked + section {
+
+    input[type="checkbox"]:checked + section {
       pointer-events: auto;
       max-height: 100vh;
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     section {
       max-height: 0;
       opacity: 0;
@@ -478,7 +451,7 @@ body, html {
       flex-direction: column;
       justify-content: space-between;
       align-items: stretch;
-      
+
       h2 {
         font-size: 1em;
         text-align: center;
@@ -490,7 +463,7 @@ body, html {
         padding: 0;
         @include icon(li, 1.05);
         @include green-shadow;
-        
+
         li {
           padding: 0.5em 0;
           display: flex;
@@ -500,15 +473,13 @@ body, html {
           a {
             color: black;
             text-decoration: none;
-            
+
             i {
               text-align: center;
               width: 1.2em;
             }
           }
-          
         }
-
       }
 
       .socials {
@@ -516,28 +487,25 @@ body, html {
         display: flex;
         align-items: flex-end;
         justify-content: space-around;
-        
+
         a {
           padding-right: 0.5em;
         }
-        
       }
 
-      .burger-footer, p {
+      .burger-footer,
+      p {
         margin: 0;
       }
-      
     }
-  } 
-
+  }
 }
 
 @media screen and (max-width: 600px) {
-
   body {
     font-size: larger;
     text-align: center;
-    
+
     .home-main {
       // margin-left: -1em;
       padding: 0;
@@ -555,9 +523,8 @@ body, html {
         }
 
         .headshot-container > .headshot {
-           
           width: 60%;
-          height: auto;  
+          height: auto;
         }
 
         .contact-form {
@@ -567,15 +534,13 @@ body, html {
           form {
             width: 80%;
             height: auto;
-            
-              input, textarea {
+
+            input,
+            textarea {
               font-size: x-large;
             }
-
           }
-
         }
-
       }
 
       .video-intro {
@@ -583,19 +548,14 @@ body, html {
         width: 100%;
         height: auto;
       }
-
     }
-
   }
 
   .matrix-container {
-  
     @for $loop from 1 through 20 {
       .matrix-code:nth-child(#{$loop}) {
         left: #{($loop - 3) * 5%};
       }
     }
-  
   }
-
 }
