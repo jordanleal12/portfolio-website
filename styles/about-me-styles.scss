@@ -66,13 +66,14 @@ html {
 }
 
 #paw {
-  text-shadow: 0 0 5px white;
+  @include label;
   z-index: 3;
   color: black;
   position: fixed;
   opacity: 0;
   transform: rotate(90deg);
   animation: paw-walk 4s step-start 1s forwards;
+  color: dimgrey;
 }
 
 @keyframes paw-walk {
@@ -92,13 +93,14 @@ html {
 }
 
 #paw2 {
-  text-shadow: 0 0 5px white;
+  @include label;
   z-index: 3;
   color: black;
   position: fixed;
   opacity: 0;
   transform: rotate(90deg);
   animation: paw2-walk 4s step-start 1.2s forwards;
+  color: dimgrey;
 }
 
 @keyframes paw2-walk {
