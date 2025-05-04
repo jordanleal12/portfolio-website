@@ -57,6 +57,21 @@ html {
   justify-content: space-between;
 }
 
+.mobile {
+  color: darkgreen;
+  animation: incoming 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes incoming {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
 @include links;
 
 .contact-header {
