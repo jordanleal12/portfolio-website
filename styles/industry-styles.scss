@@ -73,8 +73,7 @@ html {
   font-weight: bold;
   color: darkgreen;
   text-shadow: 0 0 5px lime, 0 0 10px greenyellow;
-  animation-name: typing;
-  animation-timing-function: step-start;
+  animation: typing step-start;
   opacity: 0;
   &:nth-of-type(7) {
     visibility: hidden;
